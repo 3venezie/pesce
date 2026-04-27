@@ -1,0 +1,44 @@
+---
+import Base from '@agentic-media/astro-template/layouts/Base.astro';
+import Header from '@agentic-media/astro-template/components/Header.astro';
+import Footer from '@agentic-media/astro-template/components/Footer.astro';
+import Breadcrumbs from '@agentic-media/astro-template/components/Breadcrumbs.astro';
+
+const breadcrumbItems = [
+  { label: 'Home', href: '/' },
+  { label: 'Contatti', href: '#' },
+];
+const siteName = 'Pesce';
+const contactEmail = import.meta.env.PUBLIC_CONTACT_EMAIL ?? 'redazione@pesce.example';
+---
+
+<Base
+  title={`Contatti — ${siteName}`}
+  description="Contatta la redazione di Pesce per segnalazioni, errata corrige, o proposte editoriali."
+  canonicalUrl={new URL('/contatti/', Astro.site).toString()}
+>
+  <Header logoTop="PE" logoBottom="SCE" siteName={siteName} />
+  <div class="ist-container">
+    <Breadcrumbs items={breadcrumbItems} />
+  </div>
+  <main>
+    <div class="ist-container" style="padding-bottom:60px; max-width:760px;">
+      <div class="ist-page-hero">
+        <h1 class="ist-page-hero__title">Contatti</h1>
+      </div>
+      <div class="ist-single__content" style="background:var(--base-2); border-radius:var(--radius-card); padding:36px;">
+        <p>Scrivi alla redazione: <a href={`mailto:${contactEmail}`}>{contactEmail}</a>.</p>
+        <p>
+          Per <strong>segnalazioni</strong> (errori, fonti aggiornate, dati che
+          non tornano), aggiungi nell'oggetto il titolo dell'articolo e il link.
+        </p>
+        <p>
+          Per <strong>proposte editoriali</strong> (specie locali, mercati,
+          studi, inchieste in corso), una mail di due paragrafi è perfetta:
+          chi sei, perché ne sai, e cosa proponi.
+        </p>
+      </div>
+    </div>
+  </main>
+  <Footer logoTop="PE" logoBottom="SCE" siteName={siteName} siteDescription="Pesca italiana, mercato del pesce, sicurezza alimentare." />
+</Base>

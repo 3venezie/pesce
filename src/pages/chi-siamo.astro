@@ -1,0 +1,59 @@
+---
+import Base from '@agentic-media/astro-template/layouts/Base.astro';
+import Header from '@agentic-media/astro-template/components/Header.astro';
+import Footer from '@agentic-media/astro-template/components/Footer.astro';
+import Breadcrumbs from '@agentic-media/astro-template/components/Breadcrumbs.astro';
+
+const breadcrumbItems = [
+  { label: 'Home', href: '/' },
+  { label: 'Chi siamo', href: '#' },
+];
+const siteName = 'Pesce';
+---
+
+<Base
+  title={`Chi siamo — ${siteName}`}
+  description="Pesce è una redazione editoriale dedicata a pesca italiana, mercato ittico e sicurezza alimentare."
+  canonicalUrl={new URL('/chi-siamo/', Astro.site).toString()}
+>
+  <Header logoTop="PE" logoBottom="SCE" siteName={siteName} />
+  <div class="ist-container">
+    <Breadcrumbs items={breadcrumbItems} />
+  </div>
+  <main>
+    <div class="ist-container" style="padding-bottom:60px; max-width:760px;">
+      <div class="ist-page-hero">
+        <h1 class="ist-page-hero__title">Chi siamo</h1>
+        <p style="font-size:1.1rem; color:var(--contrast-3);">
+          Una redazione che racconta cosa succede tra il mare e il banco del pesce.
+        </p>
+      </div>
+      <div class="ist-single__content" style="background:var(--base-2); border-radius:var(--radius-card); padding:36px;">
+        <p>
+          Pesce è un sito editoriale italiano. Pubblichiamo guide pratiche e
+          notizie verificate su pesca sostenibile, mercato del pesce, specie
+          italiane, acquacoltura e sicurezza alimentare.
+        </p>
+        <p>
+          Lavoriamo con fonti istituzionali (FAO, GFCM, EUMOFA, ISMEA, Coldiretti,
+          MASAF) e con la stampa specializzata. Ogni dato concreto è collegato
+          alla fonte — clic dal corpo dell'articolo e l'elenco completo in fondo.
+        </p>
+        <p>
+          Niente ricette nello stesso pezzo dell'inchiesta. Niente hype. Quando
+          una specie è in difficoltà o un'etichetta è ambigua, lo diciamo.
+        </p>
+        <h2>Argomenti</h2>
+        <ul>
+          <li><strong>Pesca sostenibile</strong> — stato degli stock, certificazioni, quote.</li>
+          <li><strong>Mercato del pesce</strong> — filiera, prezzi, etichettatura.</li>
+          <li><strong>Specie italiane</strong> — schede stagionali per chi compra.</li>
+          <li><strong>Acquacoltura</strong> — allevamento italiano, qualità e criticità.</li>
+          <li><strong>Sicurezza alimentare</strong> — richiami, conservazione, regole base.</li>
+          <li><strong>Normativa</strong> — regolamenti UE/GFCM, controlli, obblighi.</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+  <Footer logoTop="PE" logoBottom="SCE" siteName={siteName} siteDescription="Pesca italiana, mercato del pesce, sicurezza alimentare." />
+</Base>
