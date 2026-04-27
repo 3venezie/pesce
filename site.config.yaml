@@ -1,0 +1,57 @@
+identity:
+  name:        "Pesce"
+  shortName:   "Pesce"
+  url:         "https://pesce-3venezie.pages.dev"
+  description: "Pesca italiana, mercato del pesce, sicurezza alimentare. Guide pratiche e notizie verificate."
+  themeColor:  "#0a8a3a"
+  language:    "it"
+  ogLocale:    "it_IT"
+
+logo:
+  top:    "PE"
+  middle: ""
+  bottom: "SCE"
+
+hero:
+  tagline:    "Notizie e guide ittiche"
+  headline:   "Cosa succede tra il mare e il banco del pesce"
+  lede:       "Pesca sostenibile, filiera ittica, sicurezza alimentare e specie italiane. Notizie verificate, fonti citate inline."
+  emptyTitle: "Nessun articolo ancora pubblicato."
+  emptyBody:  ""
+
+topics:
+  - { slug: "pesca-sostenibile",    label: "Pesca sostenibile",    icon: "🌊", description: "Stato degli stock ittici, certificazioni MSC e ASC, quote UE/GFCM e cosa cambia anno per anno." }
+  - { slug: "mercato-del-pesce",    label: "Mercato del pesce",    icon: "🐟", description: "Filiera, aste, prezzi al banco, etichettatura, importazioni e provenienza." }
+  - { slug: "specie-italiane",      label: "Specie italiane",      icon: "🐠", description: "Schede stagionali per chi compra: alici, sarde, pesce azzurro, demersali, molluschi e crostacei." }
+  - { slug: "acquacoltura",         label: "Acquacoltura",         icon: "🪸", description: "Allevamento di pesce in Italia: branzino, orata, trota, mitili. Differenze con il selvaggio, qualità." }
+  - { slug: "sicurezza-alimentare", label: "Sicurezza alimentare", icon: "🧪", description: "Richiami, contaminanti, allergeni, conservazione corretta, regole di base per l'acquisto." }
+  - { slug: "normativa",            label: "Normativa",            icon: "⚖️", description: "Regolamenti UE, GFCM, Stato italiano. Quote, taglie minime, etichettatura, controlli." }
+
+topicsPage:
+  title: "Argomenti"
+  lede:  "Scegli un tema e trova guide pratiche e notizie sulla pesca italiana."
+
+footer:
+  disclaimer:      "I contenuti hanno scopo informativo. Le informazioni su prezzi, stock e normative possono variare nel tempo: verifica sempre alla fonte."
+  copyrightHolder: "Pesce — agentic-media"
+  topicsTitle:     "Argomenti"
+  linksTitle:      "Collegamenti"
+  links:
+    - { href: "/",                label: "Home" }
+    - { href: "/chi-siamo/",      label: "Chi siamo" }
+    - { href: "/contatti/",       label: "Contatti" }
+    - { href: "/privacy-policy/", label: "Privacy Policy" }
+    - { href: "/cookie-policy/",  label: "Cookie Policy" }
+    - { href: "/feed.xml",        label: "RSS Feed" }
+
+contact:
+  email: "redazione@pesce.example"
+
+integrations:
+  ga:      { id: "" }
+  adsense: { client: "", adsTxtExtra: "" }
+  cmp:     { provider: "none", id: "", cookieName: "site_consent", storageKey: "site_consent" }
+  push:    { enabled: false, vapidPublicKey: "", pushApi: "/api/push/subscribe" }
+
+robots:
+  disallow: []

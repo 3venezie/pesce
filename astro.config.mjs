@@ -3,10 +3,10 @@ import sitemap from '@astrojs/sitemap';
 import mdx from '@astrojs/mdx';
 import agenticMedia from '@agentic-media/astro-template/integration';
 
-const SITE = process.env.PUBLIC_SITE_URL ?? 'https://example.com';
-
+// Template integration loads ./site.config.yaml and propagates
+// `identity.url` into Astro.site automatically. Don't repeat `site:`
+// here.
 export default defineConfig({
-  site: SITE,
   integrations: [
     agenticMedia(),
     mdx(),
