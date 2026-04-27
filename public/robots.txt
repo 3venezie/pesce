@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://pesce.pages.dev/sitemap-index.xml
