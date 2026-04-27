@@ -1,0 +1,22 @@
+{
+  "name": "Redazione Pesce",
+  "slug": "redazione-pesce",
+  "title": "Redazione editoriale",
+  "bioShort": "Notizie e guide pratiche sulla pesca italiana, il mercato del pesce e la sicurezza alimentare.",
+  "bio": "La redazione di Pesce raccoglie e verifica informazioni sulla pesca italiana,\nl'acquacoltura, il mercato del pesce e la sicurezza alimentare. Lavoriamo\ncon fonti istituzionali (FAO, GFCM, EUMOFA, Coldiretti, ISMEA) e con la\nstampa specializzata, sempre citate in fondo all'articolo.\n",
+  "specialization": [
+    "pesca",
+    "filiera ittica",
+    "sicurezza alimentare"
+  ],
+  "topics": [
+    "pesca-sostenibile",
+    "mercato-del-pesce",
+    "specie-italiane",
+    "acquacoltura",
+    "sicurezza-alimentare",
+    "normativa"
+  ],
+  "writingStyle": "Pratico, no-nonsense, cucina-casalinga: niente hype, niente ricette nello stesso pezzo dell'inchiesta, fonti citate inline come link nel corpo e in coda.",
+  "avatar": "/images/authors/redazione-pesce.webp"
+}
