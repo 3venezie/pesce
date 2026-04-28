@@ -18,5 +18,6 @@
 *.mdx                              text
 *.md                               text
 # Agentic media generated webp assets are committed as normal Git blobs.
-public/images/**/hero*.webp            -filter -diff -merge text
-public/images/authors/*.webp           -filter -diff -merge text
+public/images/**/hero*.webp            -text -diff -merge -filter
+public/images/authors/*.webp           -text -diff -merge -filter
+
