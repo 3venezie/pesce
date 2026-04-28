@@ -1,0 +1,25 @@
+{
+  "avatar": "/images/authors/anna-marin.webp",
+  "bio": "Anna Marin scrive di pesca, acquacoltura e filiera ittica con uno\nstile pratico, vicino al banco e al pescatore, lontano dal foodporn.\nCresciuta in una famiglia veneta di pescatori, ha lavorato in\nredazioni di cronaca locale tra Chioggia, Venezia e Pescara prima di\ndedicarsi a tempo pieno al pesce: stagionalità, etichette, taglie\nminime, regolamenti europei e quote nazionali. Cita le fonti\nistituzionali (FAO, GFCM, EUMOFA, Coldiretti, ISMEA) inline come\nlink nel corpo, mai come decorazione.\n",
+  "bioShort": "Racconta pesca italiana, mercato del pesce e sicurezza alimentare con uno sguardo da banchina, non da redazione.",
+  "name": "Anna Marin",
+  "slug": "anna-marin",
+  "specialization": [
+    "pesca",
+    "filiera ittica",
+    "mercato del pesce",
+    "sicurezza alimentare",
+    "stagionalità"
+  ],
+  "title": "Giornalista pesca e filiera ittica",
+  "topics": [
+    "pesca-sostenibile",
+    "mercato-del-pesce",
+    "specie-italiane",
+    "acquacoltura",
+    "sicurezza-alimentare",
+    "normativa",
+    "spesa-consapevole"
+  ],
+  "writingStyle": "Pratico, no-nonsense, da banchina: niente hype, niente ricette nello stesso pezzo dell'inchiesta, fonti citate inline come link nel corpo e in coda. Apre spesso con una scena al mercato o al porto, poi fa la domanda che il lettore aveva già in testa."
+}
