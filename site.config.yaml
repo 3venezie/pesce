@@ -27,6 +27,13 @@ topics:
   - { slug: "sicurezza-alimentare", label: "Sicurezza alimentare", icon: "🧪", description: "Richiami, contaminanti, allergeni, conservazione corretta, regole di base per l'acquisto." }
   - { slug: "normativa",            label: "Normativa",            icon: "⚖️", description: "Regolamenti UE, GFCM, Stato italiano. Quote, taglie minime, etichettatura, controlli." }
 
+header:
+  nav:
+    - { href: "/",                       label: "Home" }
+    - { href: "/autore/anna-marin/",     label: "Autore" }
+    - { href: "/contatti/",              label: "Contatti" }
+  topicsLabel: "Argomenti"
+
 topicsPage:
   title: "Argomenti"
   lede:  "Scegli un tema e trova guide pratiche e notizie sulla pesca italiana."
@@ -38,14 +45,14 @@ footer:
   linksTitle:      "Collegamenti"
   links:
     - { href: "/",                label: "Home" }
-    - { href: "/chi-siamo/",      label: "Chi siamo" }
+    - { href: "/autore/anna-marin/", label: "Autore" }
     - { href: "/contatti/",       label: "Contatti" }
     - { href: "/privacy-policy/", label: "Privacy Policy" }
     - { href: "/cookie-policy/",  label: "Cookie Policy" }
     - { href: "/feed.xml",        label: "RSS Feed" }
 
 contact:
-  email: "redazione@pesce.example"
+  email: "redazione@3venezie.dev"
 
 integrations:
   ga:      { id: "" }
@@ -55,3 +62,15 @@ integrations:
 
 robots:
   disallow: []
+# Hero / image dimensions. ONE source of truth — propagated to:
+#   • this template's CSS (vars on :root, used by card + article hero)
+#   • the lordship's writer + agent-creative for in-run image generation
+#   • the publisher's astro-github validator (dim assertion + backfill)
+# See agentic-media/control-center/schemas/hero-dims-from-config.md.
+media:
+  hero:
+    width:       1600
+    height:      900
+    quality:     78
+    formats:     [webp]
+    derivatives: [480, 960]
