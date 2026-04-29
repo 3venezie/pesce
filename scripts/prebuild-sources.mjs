@@ -37,7 +37,42 @@ function urlKey(url) {
   return createHash('sha1').update(url).digest('hex').slice(0, 16);
 }
 
+function extractFrontmatterSections(fm) {
+  // Split frontmatter body into top-level YAML sections keyed on
+  // `^name:`. A "top-level key" is a line that starts with a letter
+  // (no leading whitespace) and contains a colon. Anything indented
+  // belongs to the previous section. Robust to both block-list and
+  // inline-flow YAML shapes inside each section.
+  const sections = {};
+  let cur = null;
+  let buf = [];
+  for (const line of fm.split('\n')) {
+    const m = line.match(/^([A-Za-z_][\w-]*):\s*(.*)$/);
+    if (m) {
+      if (cur !== null) sections[cur] = buf.join('\n');
+      cur = m[1];
+      buf = [m[2]];
+    } else {
+      buf.push(line);
+    }
+  }
+  if (cur !== null) sections[cur] = buf.join('\n');
+  return sections;
+}
+
 function collectFromArticles() {
+  // The frontmatter `sources:` block ships in two YAML shapes:
+  //   - wp-json-sync output (insieme/pensione):
+  //       sources:
+  //       - url: https://example.com/foo
+  //         title: ...
+  //   - writer/researcher output (pesce):
+  //       sources:
+  //         - { url: "https://example.com/foo", title: "..." }
+  // Rather than depend on a YAML parser (which would mean shipping
+  // js-yaml as a hard devDep), section-split the frontmatter and use
+  // regexes that handle both shapes: URL chars stop at quote /
+  // close-brace / comma / whitespace.
   const urls = new Set();
   const sourceIds = new Set();
   let entries;
@@ -51,21 +86,19 @@ function collectFromArticles() {
     const raw = readFileSync(join(ARTICLES_DIR, ent.name), 'utf8');
     const fmMatch = raw.match(/^---\n([\s\S]*?)\n---/);
     if (!fmMatch) continue;
-    const fm = fmMatch[1];
-    // Flat sources block
-    const sBlock = fm.match(/^sources:\n((?:\s+- url:.*\n?(?:\s+\w+:.*\n?)*)+)/m);
-    if (sBlock) {
-      for (const line of sBlock[1].split('\n')) {
-        const u = line.match(/^\s+- url:\s*"?([^"\n]+?)"?\s*$/);
-        if (u) urls.add(u[1].trim());
+    const sections = extractFrontmatterSections(fmMatch[1]);
+    if (sections.sources) {
+      for (const m of sections.sources.matchAll(
+        /url:\s*['"]?(https?:\/\/[^'"}\s,]+)['"]?/g
+      )) {
+        urls.add(m[1]);
       }
     }
-    // cited_sources block (optional; populated by future wp-json-sync runs)
-    const cBlock = fm.match(/^cited_sources:\n((?:\s+- source_id:.*\n?(?:\s+\w+:.*\n?)*)+)/m);
-    if (cBlock) {
-      for (const line of cBlock[1].split('\n')) {
-        const m = line.match(/^\s+- source_id:\s*"?([0-9a-fA-F]{24})"?\s*$/);
-        if (m) sourceIds.add(m[1]);
+    if (sections.cited_sources) {
+      for (const m of sections.cited_sources.matchAll(
+        /source_id:\s*['"]?([0-9a-fA-F]{24})['"]?/g
+      )) {
+        sourceIds.add(m[1]);
       }
     }
   }
