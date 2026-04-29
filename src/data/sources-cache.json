@@ -1,0 +1,105 @@
+{
+  "513b0c44a7447a62": {
+    "url": "https://eumofa.eu/documents/20124/181621/PTAT%2BAnchovy%2BIT%2BES%2BHR.pdf",
+    "ok": true,
+    "title": null,
+    "description": null,
+    "image": null,
+    "siteName": null,
+    "fetchedAt": "2026-04-29T07:19:39.845Z",
+    "source_id": "69f1a72d55d2bcc964af0231"
+  },
+  "05a310ec4bfafbc7": {
+    "url": "https://fish-commercial-names.ec.europa.eu/fish-names/species/engraulis-encrasicolus_en",
+    "ok": true,
+    "title": null,
+    "description": null,
+    "image": null,
+    "siteName": null,
+    "fetchedAt": "2026-04-29T07:19:39.845Z",
+    "source_id": "69f1b10f55d2bcc964af0931"
+  },
+  "4967accde5466d1e": {
+    "url": "https://www.chioggiapesca.it/",
+    "ok": true,
+    "title": null,
+    "description": null,
+    "image": null,
+    "siteName": null,
+    "fetchedAt": "2026-04-29T07:19:39.845Z",
+    "source_id": "69f1b10f55d2bcc964af094c"
+  },
+  "3469f7cf9e29a963": {
+    "url": "https://www.coldiretti.it/consumi/consumi-nel-2024-record-arrivi-pesce-straniero-i-consigli-per-scegliere-italiano",
+    "ok": false,
+    "title": null,
+    "description": null,
+    "image": null,
+    "siteName": null,
+    "fetchedAt": "2026-04-29T07:19:39.845Z",
+    "source_id": "69f1b10f55d2bcc964af094d",
+    "error": "ConnectionError(ProtocolError('Connection aborted.', RemoteDisconnected('Remote end closed connection without response')))"
+  },
+  "52e925d3c6872d8f": {
+    "url": "https://www.coldiretti.it/notizie/fermo-pesca-nelladriatico-stop-al-pesce-fino-a-fine-settembre",
+    "ok": false,
+    "title": null,
+    "description": null,
+    "image": null,
+    "siteName": null,
+    "fetchedAt": "2026-04-29T07:19:39.845Z",
+    "source_id": "69f1b10f55d2bcc964af094e",
+    "error": "ConnectionError(ProtocolError('Connection aborted.', RemoteDisconnected('Remote end closed connection without response')))"
+  },
+  "33dd92ace16dbc9f": {
+    "url": "https://www.fao.org/fishery/en/aqspecies/2106/en",
+    "ok": true,
+    "title": null,
+    "description": null,
+    "image": null,
+    "siteName": null,
+    "fetchedAt": "2026-04-29T07:19:39.845Z",
+    "source_id": "69f1b10f55d2bcc964af0958"
+  },
+  "9be461b430027b47": {
+    "url": "https://www.fao.org/gfcm/technical-meetings/detail/en/c/1739031/",
+    "ok": true,
+    "title": null,
+    "description": null,
+    "image": null,
+    "siteName": null,
+    "fetchedAt": "2026-04-29T07:19:39.845Z",
+    "source_id": "69f1b10f55d2bcc964af0959"
+  },
+  "2907c324238ab3a0": {
+    "url": "https://www.ilgiornaledelcibo.it/pesce-meglio-se-e-di-stagione/",
+    "ok": true,
+    "title": "Pesce di stagione: ecco la lista divisa per mese",
+    "description": "Comprare Pesce di Stagione, oltre a salvaguardare l'ambiente, garantisce una migliore qualità a un minor prezzo. Ecco un'utile lista divisa mese per mese.",
+    "image": "https://www.ilgiornaledelcibo.it/wp-content/uploads/2011/01/Pesce-di-Stagione.jpg",
+    "siteName": "Giornale del cibo",
+    "fetchedAt": "2026-04-29T07:19:39.845Z",
+    "source_id": "69f1b10f55d2bcc964af0965"
+  },
+  "b7efd7a1d9dd77cb": {
+    "url": "https://www.ismea.it/flex/files/D.94c2b237145616372b69/Mercato_pdt_ittici_freschi_Italia.pdf",
+    "ok": false,
+    "title": null,
+    "description": null,
+    "image": null,
+    "siteName": null,
+    "fetchedAt": "2026-04-29T07:19:39.845Z",
+    "source_id": "69f1b10f55d2bcc964af0974",
+    "error": "SSLError(MaxRetryError(\"HTTPSConnectionPool(host='www.ismea.it', port=443): Max retries exceeded with url: /flex/files/D.94c2b237145616372b69/Mercato_pdt_ittici_freschi_Italia.pdf (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1029)')))\"))"
+  },
+  "dda5f02fce5d7ef3": {
+    "url": "https://www.romagnaatavola.it/pesce-primavera-questanno-arrivato-ritardo/",
+    "ok": true,
+    "title": "L'Alto Adriatico: un'annata primaverile per i pescatori | Delizie di Romagna - Romagna a Tavola",
+    "description": "La primavera nell’Alto Adriatico è giunta con qualche settimana di ritardo, un ritardo dovuto alle intense e ripetute ondate di gelo, tra cui il Buran, che hanno colpito l’Italia nei mesi precedenti. L’arrivo delle seppie e delle alici vicino alla costa, evento annuale che segnala l’innalzamento della temperatura dell’acqua, si è fatto attendere. Nel mare […]",
+    "image": "https://www.romagnaatavola.it/wp-content/uploads/2025/08/pesce-primavera-questanno-arrivato-ritardo.jpg",
+    "siteName": "Romagna a Tavola",
+    "fetchedAt": "2026-04-29T07:19:39.845Z",
+    "source_id": "69f1b10f55d2bcc964af0980"
+  }
+}
