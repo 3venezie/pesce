@@ -5,6 +5,7 @@
   "private": true,
   "scripts": {
     "dev": "astro dev",
+    "prebuild": "node scripts/prebuild-sources.mjs",
     "build": "astro build",
     "preview": "astro preview"
   },
@@ -14,5 +15,8 @@
     "@astrojs/rss": "^4.0.18",
     "@astrojs/sitemap": "^3.7.2",
     "astro": "^6.1.9"
+  },
+  "devDependencies": {
+    "mongodb": "^6.5.0"
   }
 }
