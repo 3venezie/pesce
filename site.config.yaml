@@ -27,6 +27,27 @@ topics:
   - { slug: "sicurezza-alimentare", label: "Sicurezza alimentare", icon: "🧪", description: "Richiami, contaminanti, allergeni, conservazione corretta, regole di base per l'acquisto." }
   - { slug: "normativa",            label: "Normativa",            icon: "⚖️", description: "Regolamenti UE, GFCM, Stato italiano. Quote, taglie minime, etichettatura, controlli." }
 
+# Controlled tag vocabulary: slug (article frontmatter + URLs) → label (chip text).
+# Unlisted slugs fall back to the slug verbatim.
+tag_vocabulary:
+  - { slug: "mercato del pesce",   label: "Mercato del pesce" }
+  - { slug: "filiera ittica",      label: "Filiera ittica" }
+  - { slug: "pesce fresco",        label: "Pesce fresco" }
+  - { slug: "pesce di stagione",   label: "Pesce di stagione" }
+  - { slug: "pesca italiana",      label: "Pesca italiana" }
+  - { slug: "etichettatura",       label: "Etichettatura" }
+  - { slug: "alici",               label: "Alici" }
+  - { slug: "acciughe",            label: "Acciughe" }
+  - { slug: "adriatico",           label: "Adriatico" }
+  - { slug: "pesca-sostenibile",   label: "Pesca sostenibile" }
+  - { slug: "pesce-azzurro",       label: "Pesce azzurro" }
+  - { slug: "acquacoltura",        label: "Acquacoltura" }
+  - { slug: "sicurezza-alimentare", label: "Sicurezza alimentare" }
+  - { slug: "normativa",           label: "Normativa" }
+  - { slug: "stagionalita",        label: "Stagionalità" }
+  - { slug: "mercato-del-pesce",   label: "Mercato del pesce" }
+  - { slug: "specie-italiane",     label: "Specie italiane" }
+
 header:
   nav:
     - { href: "/",                       label: "Home" }
