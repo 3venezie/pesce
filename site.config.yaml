@@ -99,6 +99,7 @@ search:
 
 robots:
   disallow: []
+
 # Hero / image dimensions. ONE source of truth — propagated to:
 #   • this template's CSS (vars on :root, used by card + article hero)
 #   • the lordship's writer + agent-creative for in-run image generation
