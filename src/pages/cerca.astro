@@ -1,0 +1,107 @@
+---
+/**
+ * Italian search page for Pesce — mounts Pagefind at /cerca/.
+ *
+ * All Italian UI strings come from site.config.yaml::search so this file
+ * stays thin. The template's injected /search route is NOT active because
+ * Astro project-level pages always win over injected routes.
+ *
+ * To change labels or Pagefind translations, edit site.config.yaml::search.
+ */
+import siteConfig from 'virtual:agentic-media/site-config';
+import Base from '@agentic-media/astro-template/layouts/Base.astro';
+import Header from '@agentic-media/astro-template/components/Header.astro';
+import Footer from '@agentic-media/astro-template/components/Footer.astro';
+import Breadcrumbs from '@agentic-media/astro-template/components/Breadcrumbs.astro';
+
+const siteName       = siteConfig.identity.name;
+const q              = Astro.url.searchParams.get('q') ?? '';
+const searchLabel    = siteConfig.search.label;
+const searchPath     = siteConfig.search.path;
+const uiTranslations = siteConfig.search.uiTranslations;
+
+const breadcrumbItems = [
+  { label: 'Home', href: '/' },
+  { label: searchLabel, href: '#' },
+];
+---
+
+<Base
+  title={`${searchLabel} — ${siteName}`}
+  description={`${searchLabel} — ${siteName}`}
+  canonicalUrl={new URL(searchPath, Astro.site).toString()}
+  noindex={true}
+>
+  <Header />
+
+  <div class="ist-container">
+    <Breadcrumbs items={breadcrumbItems} />
+  </div>
+
+  <main>
+    <div class="ist-container ist-cerca-wrap">
+      <h1 class="ist-cerca-heading">{searchLabel}</h1>
+
+      <div id="ist-pagefind-ui" class="ist-pagefind-ui"></div>
+
+      <p id="ist-pagefind-fallback" class="ist-cerca-fallback" hidden>
+        Indice di ricerca non disponibile. Esegui prima
+        <code>astro build &amp;&amp; pagefind --site dist</code>.
+      </p>
+    </div>
+  </main>
+
+  <Footer />
+</Base>
+
+<style>
+  .ist-cerca-wrap {
+    padding-block: 40px 80px;
+    max-width: 860px;
+  }
+
+  .ist-cerca-heading {
+    font-size: var(--fs-h2);
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--contrast);
+    margin-block-end: 28px;
+  }
+
+  .ist-cerca-fallback {
+    color: var(--contrast-2);
+    padding-block: 24px;
+  }
+
+  .ist-pagefind-ui {
+    --pagefind-ui-scale: 1;
+    --pagefind-ui-primary:             var(--accent);
+    --pagefind-ui-text:                var(--contrast);
+    --pagefind-ui-background:          var(--base-3);
+    --pagefind-ui-border:              var(--hairline);
+    --pagefind-ui-tag:                 var(--base-2);
+    --pagefind-ui-border-width:        1px;
+    --pagefind-ui-border-radius:       var(--radius-cta, 6px);
+    --pagefind-ui-image-border-radius: var(--radius-card, 8px);
+    --pagefind-ui-font:                var(--font-body);
+  }
+</style>
+
+<script define:vars={{ initialQuery: q, uiTranslations }}>
+  async function initPagefind() {
+    const { PagefindUI } = await import('/pagefind/pagefind-ui.js');
+    const ui = new PagefindUI({
+      element: '#ist-pagefind-ui',
+      showImages: false,
+      translations: Object.keys(uiTranslations).length > 0 ? uiTranslations : undefined,
+    });
+    const prefill = initialQuery || new URLSearchParams(location.search).get('q') || '';
+    if (prefill) ui.triggerSearch(prefill);
+  }
+  try {
+    await initPagefind();
+  } catch {
+    const fallback = document.getElementById('ist-pagefind-fallback');
+    if (fallback) fallback.hidden = false;
+  }
+</script>
