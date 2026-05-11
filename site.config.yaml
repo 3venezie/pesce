@@ -81,8 +81,25 @@ integrations:
   cmp:     { provider: "none", id: "", cookieName: "site_consent", storageKey: "site_consent" }
   push:    { enabled: false, vapidPublicKey: "", pushApi: "/api/push/subscribe" }
 
+search:
+  path:        "/cerca/"
+  label:       "Cerca"
+  placeholder: "Cerca articoli…"
+  uiTranslations:
+    placeholder:   "Cerca articoli…"
+    zero_results:  'Nessun risultato per "[SEARCH_TERM]".'
+    many_results:  '[COUNT] risultati per "[SEARCH_TERM]"'
+    one_result:    '1 risultato per "[SEARCH_TERM]"'
+    alt_search:    'Nessun risultato per "[SEARCH_TERM]". Prova con "[DIFFERENT_TERM]"?'
+    search_label:  "Cerca in questo sito"
+    filters_label: "Filtri"
+    clear_search:  "Cancella"
+    load_more:     "Carica altri risultati"
+    search_hint:   "Inizia a scrivere per cercare…"
+
 robots:
   disallow: []
+
 # Hero / image dimensions. ONE source of truth — propagated to:
 #   • this template's CSS (vars on :root, used by card + article hero)
 #   • the lordship's writer + agent-creative for in-run image generation
