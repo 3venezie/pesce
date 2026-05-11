@@ -16,9 +16,13 @@ import Breadcrumbs from '@agentic-media/astro-template/components/Breadcrumbs.as
 
 const siteName       = siteConfig.identity.name;
 const q              = Astro.url.searchParams.get('q') ?? '';
-const searchLabel    = siteConfig.search.label;
-const searchPath     = siteConfig.search.path;
-const uiTranslations = siteConfig.search.uiTranslations;
+// Defensive: siteConfig.search is undefined until template PR #25 merges.
+// Fallbacks keep the build green; once #25 is merged the YAML values take over.
+const searchCfg      = (siteConfig as any).search ?? {};
+const searchLabel    = searchCfg.label ?? "Cerca";
+const searchPath     = searchCfg.path ?? "/cerca/";
+const searchPlaceholder = searchCfg.placeholder ?? "Cerca articoli…";
+const uiTranslations = searchCfg.uiTranslations ?? {};
 
 const breadcrumbItems = [
   { label: 'Home', href: '/' },
