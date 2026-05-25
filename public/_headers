@@ -1,0 +1,63 @@
+/*
+  # ============================================================
+  # SECURITY HEADERS — pesce-3venezie.pages.dev
+  # Added: 2026-05-25 — B4-3 pre-launch XSS mitigation (task #318)
+  # ============================================================
+  #
+  # CSP NOTES — LAUNCH STATE (AdSense / GA4 / push all DISABLED)
+  #
+  # 'unsafe-inline' in script-src is required because:
+  #   - /cerca/ (Pagefind search) uses <script is:inline type="module">
+  #     which is inline and cannot be nonce-based in static SSG output.
+  #   - Post-launch hardening: replace 'unsafe-inline' with per-script
+  #     SHA-256 hashes or adopt Astro's nonce support when available.
+  #     BACKLOG item: remove 'unsafe-inline' from script-src.
+  #
+  # 'unsafe-inline' in style-src is required because:
+  #   - Astro SSG emits component <style> blocks inline in the HTML.
+  #
+  # ============================================================
+  # WHEN ADSENSE ACTIVATES — add these to the CSP:
+  # (copy-paste the relevant fragments into the CSP line below)
+  #
+  #   script-src: add
+  #     https://pagead2.googlesyndication.com
+  #     https://partner.googleadservices.com
+  #     https://tpc.googlesyndication.com
+  #     https://www.googletagmanager.com
+  #     https://www.google-analytics.com
+  #
+  #   img-src: add
+  #     https://pagead2.googlesyndication.com
+  #     https://tpc.googlesyndication.com
+  #     https://www.google-analytics.com
+  #     https://*.googlesyndication.com
+  #
+  #   frame-src: add
+  #     https://googleads.g.doubleclick.net
+  #     https://tpc.googlesyndication.com
+  #     https://www.google.com
+  #
+  #   connect-src: add
+  #     https://www.google-analytics.com
+  #     https://analytics.google.com
+  #     https://stats.g.doubleclick.net
+  #     https://pagead2.googlesyndication.com
+  #
+  # WHEN GA4 ACTIVATES — also add to script-src:
+  #     https://www.googletagmanager.com
+  #     https://www.google-analytics.com
+  # (already listed under AdSense above — only needed once)
+  #
+  # TECHNICAL DEBT: 'unsafe-inline' in script-src.
+  # The proper fix is nonce-based CSP, which requires Astro server-side
+  # rendering or a CF Worker to inject per-request nonces. For a static
+  # Pages site, hash-based allowlisting of specific inline scripts is the
+  # next best option but fragile across builds. Tracked post-launch.
+  # ============================================================
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests;
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()
+  X-Robots-Tag: index, follow
